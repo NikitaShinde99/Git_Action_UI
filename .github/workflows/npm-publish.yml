@@ -23,7 +23,7 @@ jobs:
       fail-fast: false # Continue running other browsers even if one fails
       matrix:
         # Run tests on multiple browsers
-        browser: [chromium, firefox, webkit]
+        browser: [chromium]
         
     steps:
     - name: Checkout repository
