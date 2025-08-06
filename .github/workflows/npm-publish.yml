@@ -2,9 +2,9 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master, develop ]
+    branches: [ main]
   workflow_dispatch: # Allows manual trigger
   schedule:
     - cron: '0 9 * * 1-5' # Run at 9 AM, Monday through Friday
@@ -42,7 +42,7 @@ jobs:
       run: npx playwright install --with-deps ${{ matrix.browser }}
     
     - name: Run Playwright tests
-      run: npx playwright test Final.spec.ts --project=${{ matrix.browser }} --reporter=html,json,junit
+      run: npx playwright test Flnal.spec.ts --project=${{ matrix.browser }} --reporter=html,json,junit
       env:
         # Add any environment variables your tests need here
         BROWSER: ${{ matrix.browser }}
@@ -94,7 +94,7 @@ jobs:
       run: npx playwright install --with-deps
     
     - name: Run Playwright tests
-      run: npx playwright test Final.spec.ts --reporter=html,json
+      run: npx playwright test FInal.spec.ts --reporter=html,json
     
     - name: Upload Playwright Report
       uses: actions/upload-artifact@v4
